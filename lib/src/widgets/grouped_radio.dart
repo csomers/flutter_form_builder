@@ -17,7 +17,7 @@ class GroupedRadio<T> extends StatefulWidget {
   final OptionsOrientation orientation;
 
   /// Called when the value of the checkbox group changes.
-  final ValueChanged<T> onChanged;
+  final ValueChanged<T?> onChanged;
 
   /// The color to use when this checkbox is checked.
   ///
@@ -273,8 +273,7 @@ class _GroupedRadioState<T> extends State<GroupedRadio<T?>> {
         if (widget.controlAffinity == ControlAffinity.leading) control,
         Flexible(child: label),
         if (widget.controlAffinity == ControlAffinity.trailing) control,
-        if (widget.separator != null && index != widget.options.length - 1)
-          widget.separator!,
+        if (widget.separator != null && index != widget.options.length - 1) widget.separator!,
       ],
     );
   }
